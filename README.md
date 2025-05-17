@@ -46,7 +46,7 @@ INNER QUERY:
 
 OUTER QUERY:
 1. Takes the results from the inner query (aliased as 't')
-2. Groups by the frequency categories
+2. Group by the frequency categories
 3. For each category calculates:
    - Number of customers
    - Average transactions per month (rounded to 2 decimal places)
@@ -69,11 +69,30 @@ subquery 1:
 subquery 2:
 - Identify each investment plan (`id`) and its owner
 - Label records as 'investment' type
-- Uses the plan start date as a proxy for last activity (since investment plans may not have regular transactions)
+- Use the plan start date as a proxy for last activity (since investment plans may not have regular transactions)
 
 main query:
-- Combines savings and investment results with UNION
-- Filters for accounts with ≥365 days of inactivity
-- Orders results by inactivity duration (longest inactive first)
-- Returns distinct records to avoid duplicates
+- Combine savings and investment results with UNION
+- Filter for accounts with ≥365 days of inactivity
+- Order results by inactivity duration (longest inactive first)
+- Return distinct records to avoid duplicates
 _______________________________________
+## Question 4:For each customer, assuming the profit_per_transaction is 0.1% of the transaction value, calculate:
+
+● Account tenure (months since signup)
+
+● Total transactions
+
+● Estimated CLV (Assume: CLV = (total_transactions / tenure) * 12 *
+
+avg_profit_per_transaction)
+
+● Order by estimated CLV from highest to lowest
+
+## Approach
+- Combine first and last names for easy identification.
+- Measures how many months the customer has been active.
+- Count all transactions.
+- Calculate average profit per transaction (assuming 0.1% profit margin).
+- Converts from kobo to Naira by dividing by 100.
+- divide total transactions by avg profit per transaction
