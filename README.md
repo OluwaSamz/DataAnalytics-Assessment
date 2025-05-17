@@ -21,3 +21,32 @@ Question 1:Write a query to find customers with at least one funded savings plan
 5. Sort in descending order of total deposits
 
 ___________________________________________
+### Question 2:Calculate the average number of transactions per customer per month and
+## categorize them:
+
+● "High Frequency" (≥10 transactions/month)
+
+● "Medium Frequency" (3-9 transactions/month)
+
+● "Low Frequency" (≤2 transactions/month)
+
+
+The query has two main parts:
+1. An inner subquery that calculates transaction frequencies per customer
+2. An outer query that aggregates these into frequency categories
+
+INNER QUERY:
+1. Joins users with their savings transactions
+2. For each customer (grouped by name):
+   - Calculates average transactions per month (total transactions divided by distinct months)
+   - Categorizes them into:
+     - High Frequency: ≥10 transactions/month
+     - Medium Frequency: 3-9 transactions/month
+     - Low Frequency: <3 transactions/month
+
+OUTER QUERY:
+1. Takes the results from the inner query (aliased as 't')
+2. Groups by the frequency categories
+3. For each category calculates:
+   - Number of customers
+   - Average transactions per month (rounded to 2 decimal places)
