@@ -1,5 +1,8 @@
 # DataAnalytics-Assessment
-Question 1:
+Question 1:Write a query to find customers with at least one funded savings plan AND one funded investment plan, sorted by total deposits.
+
+
+
 1. First step is to identify the columns needed.
    - User ID (`owner_id`)
    - Full name (concatenation of first and last names)
