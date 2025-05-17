@@ -21,8 +21,8 @@ Question 1:Write a query to find customers with at least one funded savings plan
 5. Sort in descending order of total deposits
 
 ___________________________________________
-### Question 2:Calculate the average number of transactions per customer per month and
-## categorize them:
+ Question 2:Calculate the average number of transactions per customer per month and
+ categorize them:
 
 ● "High Frequency" (≥10 transactions/month)
 
@@ -54,7 +54,7 @@ OUTER QUERY:
 
 _________________________________________
 
-## Question 3: Find all active accounts (savings or investments) with no transactions in the last 1 year (365 days).
+Question 3: Find all active accounts (savings or investments) with no transactions in the last 1 year (365 days).
 
 ## Approach
 
@@ -77,7 +77,7 @@ main query:
 - Order results by inactivity duration (longest inactive first)
 - Return distinct records to avoid duplicates
 _______________________________________
-## Question 4:For each customer, assuming the profit_per_transaction is 0.1% of the transaction value, calculate:
+ Question 4:For each customer, assuming the profit_per_transaction is 0.1% of the transaction value, calculate:
 
 ● Account tenure (months since signup)
 
