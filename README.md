@@ -50,3 +50,30 @@ OUTER QUERY:
 3. For each category calculates:
    - Number of customers
    - Average transactions per month (rounded to 2 decimal places)
+  
+
+_________________________________________
+
+## Question 3: Find all active accounts (savings or investments) with no transactions in the last 1 year (365 days).
+
+## Approach
+
+Two subqueries are needed (savings and investments) the  union to combine them and then filters for inactive accounts.
+
+subquery 1:
+ - Identify each savings account (`savings_id`) and its owner
+- Label records as 'savings' type
+- Find the most recent transaction date for each account
+- Calculate days of inactivity (current date minus last transaction date)
+
+subquery 2:
+- Identify each investment plan (`id`) and its owner
+- Label records as 'investment' type
+- Uses the plan start date as a proxy for last activity (since investment plans may not have regular transactions)
+
+main query:
+- Combines savings and investment results with UNION
+- Filters for accounts with ≥365 days of inactivity
+- Orders results by inactivity duration (longest inactive first)
+- Returns distinct records to avoid duplicates
+_______________________________________
