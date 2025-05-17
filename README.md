@@ -2,7 +2,7 @@
 Question 1:Write a query to find customers with at least one funded savings plan AND one funded investment plan, sorted by total deposits.
 
 
-
+## Approach
 1. First step is to identify the columns needed.
    - User ID (`owner_id`)
    - Full name (concatenation of first and last names)
@@ -30,7 +30,7 @@ ___________________________________________
 
 ● "Low Frequency" (≤2 transactions/month)
 
-
+## Approach
 The query has two main parts:
 1. An inner subquery that calculates transaction frequencies per customer
 2. An outer query that aggregates these into frequency categories
